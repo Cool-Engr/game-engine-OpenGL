@@ -76,19 +76,19 @@ Complex<T>::Complex(T value) {
 	simplify();
 }
 
-// template<typename T>
-// template<typename S>
-// Complex<T>::Complex(Complex<S> other) {
-// 	std::vector<T> numCoeffs;
-// 	for (int i = 0; i < other.getNumCoeffs().size(); i++)
-// 		numCoeffs.push_back((T) other.getNumCoeffs()[i]);
-// 	std::vector<T> denCoeffs;
-// 	for (int i = 0; i < other.getDenCoeffs().size(); i++)
-// 		denCoeffs.push_back((T) other.getDenCoeffs()[i]);
-// 	_numCoeffs = numCoeffs;
-// 	_denCoeffs = denCoeffs;
-// 	simplify();
-// }
+template<typename T>
+template<typename S>
+Complex<T>::Complex(Complex<S> other) {
+	std::vector<T> numCoeffs;
+	for (int i = 0; i < other.getNumCoeffs().size(); i++)
+		numCoeffs.push_back((T) other.getNumCoeffs()[i]);
+	std::vector<T> denCoeffs;
+	for (int i = 0; i < other.getDenCoeffs().size(); i++)
+		denCoeffs.push_back((T) other.getDenCoeffs()[i]);
+	_numCoeffs = numCoeffs;
+	_denCoeffs = denCoeffs;
+	simplify();
+}
 
 template<typename T>
 T Complex<T>::value(T x) {
